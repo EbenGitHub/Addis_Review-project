@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 
 app = Flask(__name__)
 
@@ -8,7 +8,7 @@ def index():
 
 @app.route('/login')
 def login():
-    return render_template("login.html")
+    return redirect("/signup", code=301)
 
 @app.route('/signup')
 def signup():
