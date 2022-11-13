@@ -26,9 +26,5 @@ def foods():
 def reviews():
     return render_template("review.html")
 
-@app.route('/register', methods=["POST", "PUT"])
-def register():
-    
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
