@@ -3,6 +3,7 @@
     <head>
         <title>welcome</title>
     </head>
+    <script src="https://kit.fontawesome.com/7d3bc7f2d4.js" crossorigin="anonymous"></script>
 
     <body>
         <style>
@@ -203,6 +204,16 @@
                  .bar:hover {
                     fill: brown;
                  }
+
+                 main section {
+                    position: relative;
+                    left: 0;
+                    right: 0;
+                 }
+
+                 nav {
+                    right: 0;
+                 }
                
             </style>
             
@@ -225,7 +236,7 @@
                         <div><img src="https://images.deliveryhero.io/image/fd-my/LH/wnjr-hero.jpg"></div>
                     </div>
                     <div class="cont-txt">
-                        <p>This is a website for choosing delicious foods. You can review and rate restaurants' foods here</p>
+                        <p>This is a website for choosing delicious foods &nbsp; <i class="fa-solid fa-bowl-food"></i>. You can review and rate restaurants' foods here</p>
                     </div>
                 </div>
             </section>
@@ -236,6 +247,18 @@
                     <div id="cont-svg">
 
 <style>
+
+    section h2 {
+        color: white;
+    }
+
+    .cont-txt {
+        font-size: 2.2rem;
+        width: 50%;
+        line-height: 5.3rem;
+        color: rgb(20, 20, 57);
+    }
+
     #cont-svg {
         padding-left: 90px;
     }
@@ -250,8 +273,8 @@
 <script src="https://d3js.org/d3.v6.min.js"></script>
 
             <script>
-                const dataset = [10, 26, 45];
-                const nameset = ["Users", "Restaurants", "Foods"];
+                const dataset = [10, 45, 26, 29];
+                const nameset = ["Users", "Foods", "Restaurants", "Reviews"];
                 const w = 500;
                 const h = 200;
 
@@ -260,6 +283,7 @@
                     $("#user-number").text(dataset[0]);
                     $("#food-number").text(dataset[1]);
                     $("#restaurant-number").text(dataset[2]);
+                    $("#review-number").text(dataset[3]);
                 });
 
 
@@ -296,15 +320,23 @@
                     height: 50px;
                 }
 
+                
+
                 .sceine-four {
                     display: flex;
+                }
+
+                .sceine-three .cont-txt span {
+                    font-weight: bolder;
                 }
             </style>
 
 
                     </div>
                     <div class="cont-txt">
-                        <p>We have over <span id="user-number"></span> users with more than <span id="food-number"></span> foods and <span id="restaurant-number"></span> restaurants !</p>
+                        <p>We have over <span id="user-number"></span> users with more than <span id="food-number"></span> foods and 
+                            <span id="restaurant-number"></span> restaurants !  There are already <span id="review-number"></span> reviews.
+                            <br><span class="triger"><i class="fa-solid fa-hand-point-up"></i> &nbsp; Hover on the SVG graph for more detail</span></p>
                     </div>
                 </div>
                 
@@ -312,32 +344,160 @@
 
             <section id="sceine-four">
                 <h2>How to use the website</h2>
-                <div id="step-one">
-                    <h3>first of all you need to create a new account</h3>
-                    <a href="/signup"><span>Create new account</span></a>
+                <div class="how-to">
+                    <div id="step-one">
+                        <p>Step 1: first of all you need to create a new account</p>
+                        
+                        <a href="/signup"><span class="triger">Create new account &nbsp; <i class="fa-solid fa-plus"></i></span></a>
+                    </div>
+                    <div class="step-two">
+                        <p>Step 2: Choose you restaurant you want to dine at</p>
+                        <img src="../static/images/restaurant-mini.png">
+                    </div>
+                    <div class="step-three">
+                        <p>Step 3: Here are food lists of your chosed restaurant. Click on the food to see more about the food.</p>
+                        <img src="../static/images/food-mini.png">
+                    </div>
+                    <div class="step-four">
+                        <p>Step 4: <span class="bang">BOOM! &nbsp; <i class="fa-solid fa-explosion"></i></span> Here you can read write review, rate, and see the address of the restaurant. </p>
+                        <img src="../static/images/review-mini.png">
+                    </div>
+                    <div class="step-five">
+                        <p>Go, create an account and explore it for yourself !! &nbsp; <i class="fa-solid fa-face-smile-wink"></i></p>
+                        <a href="/signup"><span>Create new account</span></a>
+                    </div>
                 </div>
-                <div class="step-two">
-                    <p>Step 2: Choose you restaurant you want to dine at</p>
-                    <img src="../static/images/restaurant.png">
-                </div>
-                <div class="step-three">
-                    <p>Step 3: Here are food lists of your chosed restaurant. Click on the food to see more about the food.</p>
-                    <img src="../static/images/food.png">
-                </div>
-                <div class="step-four">
-                    <p>Step 4: <span class="bang">BOOM!</span> Here you can read write review, rate, and see the address of the restaurant. </p>
-                    <img src="../static/images/review.png">
-                </div>
-                <div class="step-five">
-                    <p>Go, create an account and explore it for yourself !! :)</p>
-                    <a href="/signup"><span>Create new account</span></a>
-                </div>
-                
+                <style>
+                    .how-to {
+                        display: grid;
+                        column-gap: 50px;
+                        row-gap: 5px;
+                        grid-template-columns: 20% .5fr .5fr;
+                        margin-top: -70px;
+                        padding: 10px;
+                    }
+
+                    #sceine-four h2 {
+                        position: relative;
+                        top: -30px;
+                    }
+
+                    .how-to .step-one {
+                        grid-row-start: 1;
+                        grid-row-end: 3;
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        text-align: center;
+                    }
+
+                    .how-to .step-four {
+                        grid-row-start: 2;
+                        grid-row-end: 3;
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                    }
+
+                    .how-to .step-five {
+                        grid-row-start: 2;
+                        grid-row-end: 3;
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                    }
+
+                    .how-to .step-one, .how-to .step-five {
+                        padding: 40px;
+                    }
+
+                    #sceine-four div p {
+                        color: #ccc88f;
+                        font-size: 1.5rem;
+                    }
+
+                    #sceine-four div a {
+                        color: greenyellow;
+                        text-decoration: none;
+                        margin-left: 50px;
+                        font-size: 1.2rem;
+                    }
+
+                    #sceine-four div a:hover {
+                        color: yellow;
+                        font-size: 1.25rem;
+                        transition-duration: .3s;
+                    }
+
+                    .bang {
+                        font-size: 2rem;
+                        font-weight: bolder;
+                        color: red;
+                    }
+
+                    #sceine-five div p span{
+                        font-size: 1.6rem;
+                        font-weight: bolder;
+                    }
+
+                    #sceine-five div ul li {
+                        font-size: 1.2rem;
+                        
+                    }
+
+                    #sceine-five .org {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        padding-left: 120px;
+                        color: rgb(178, 227, 214);
+                        
+                    }
+
+                    #sceine-five .org ul {
+                        color: #e1d2bf;
+                    }
+
+                    .org #slogan, .org #school {
+                        align-self: flex-end;
+                        margin-right: 60px;
+                    }
+
+                    .fa-heart {
+                        color: red;
+                    }
+
+
+                </style>
             </section>
 
             <section id="sceine-five">
                 <h2>About us</h2>
+                <div class="org">
+                    <div><p><span>Developers</span>&nbsp;   <i class="fa-solid fa-code"></i>: </p>
+                        <ul>
+                            <li>Rawi Daniel</li> 
+                            <li>Ikram Awol </li>
+                            <li>Abenezer Eshetie</li>
+                        </ul>
+                    </div>
+                    <div><p><span>Technologies</span>&nbsp; <i class="fa-solid fa-laptop-code"></i>: </p>
+                        <ul>
+                            <li><i class="fa-brands fa-python"></i> &nbsp; Python, Flask</li> 
+                            <li><i class="fa-brands fa-html5"></i> &nbsp; HTML & CSS</li>
+                            <li><i class="fa-brands fa-square-js"></i> &nbsp; JavaScript JQuery d3.js</li> 
+                            <li><i class="fa-brands fa-bootstrap"></i> &nbsp; bootstrap</li>
+                            <li><i class="fa-solid fa-font-awesome"></i> &nbsp; FontAwesome</li>
+                            <li><i class="fa-brands fa-github"></i> &nbsp; GitHub, Github Flow, Github Actions </li>
+                            <li><i class="fa-brands fa-docker"></i> &nbsp; Docker, Shell</li>
+                            <li><i class="fa-solid fa-database"></i> &nbsp; MySQL</li>
+                        </ul>
+                    </div>
                 
+                    <p id="slogan">Made with <i class="fa-solid fa-heart"></i> by ALX-SE Students</p>
+                    <div id="school">
+                        <p>ALX - Software Engineering School</p>
+                    </div> 
+                </div>
+                               
             </section>
 
         </main>
