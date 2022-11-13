@@ -205,42 +205,6 @@
                  }
                
             </style>
-<script src="libs/d3.v3.min.js"></script>
-<script src="libs/d3/d3.min.js" charset="utf-8"></script>
-<script src="libs/d3/topojson.v1.min.js"></script>
-<script src="libs/d3/d3-queue.v2.min.js"></script>
-            <script>
-                const dataset = [10, 26, 45];
-                const nameset = ["user", "restaurants", "foods"];
-                const w = 500;
-                const h = 100;
-
-                const svg = d3.select("#cont-svg")
-                              .append("svg")
-                              .attr("width", w)
-                              .attr("height", h)
-
-                svg.selectAll("rect")
-                   .data(dataset)
-                   .enter()
-                   .append("rect")
-                   .attr("x", (d, i) => i * 30)
-                   .attr("y", (d, i) => h - 3 * d)
-                   .attr("width", 25)
-                   .attr("height", (d, i) => d * 3)
-                   .attr("fill", "navy")
-                   .attr("class", "bar")
-                   .append("title")
-                   .text(d => d)
-
-                svg.selectAll("text")
-                   .data(dataset)
-                   .enter()
-                   .append("text")
-                   .text((d) => d)
-                   .attr("x", (d, i) => i * 30)
-                   .attr("y", (d, i) => h - (d * 3 + 3))
-            </script>
             
             <section id="sceine-one">
                 <div>
@@ -271,9 +235,76 @@
                 <div class="container">
                     <div id="cont-svg">
 
+<style>
+    #cont-svg {
+        padding-left: 90px;
+    }
+
+    text {
+        font-weight: bolder;
+        fill: navy;
+    }
+</style>
+                        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+            <script>
+                const dataset = [10, 26, 45];
+                const nameset = ["Users", "Restaurants", "Foods"];
+                const w = 500;
+                const h = 200;
+
+
+                $(document).ready(function(){
+                    $("#user-number").text(dataset[0]);
+                    $("#food-number").text(dataset[1]);
+                    $("#restaurant-number").text(dataset[2]);
+                });
+
+
+                const svg = d3.select("#cont-svg")
+                              .append("svg")
+                              .attr("width", w)
+                              .attr("height", h)
+
+                svg.selectAll("rect")
+                   .data(dataset)
+                   .enter()
+                   .append("rect")
+                   .attr("x", (d, i) => i * 90)
+                   .attr("y", (d, i) => h - 3 * d)
+                   .attr("width", 75)
+                   .attr("height", (d, i) => d * 3)
+                   .attr("fill", "navy")
+                   .attr("class", "bar")
+                   .append("title")
+                   .text(d => d)
+
+                svg.selectAll("text")
+                   .data(dataset)
+                   .enter()
+                   .append("text")
+                   .text((d, i) => nameset[i])
+                   .attr("x", (d, i) => i * 90)
+                   .attr("y", (d, i) => h - (d * 3 + 9))
+            </script>
+
+            <style> 
+                .sceine-four div img {
+                    width: 100px !important;
+                    height: 50px;
+                }
+
+                .sceine-four {
+                    display: flex;
+                }
+            </style>
+
+
                     </div>
                     <div class="cont-txt">
-
+                        <p>We have over <span id="user-number"></span> users with more than <span id="food-number"></span> foods and <span id="restaurant-number"></span> restaurants !</p>
                     </div>
                 </div>
                 
@@ -281,7 +312,26 @@
 
             <section id="sceine-four">
                 <h2>How to use the website</h2>
-
+                <div id="step-one">
+                    <h3>first of all you need to create a new account</h3>
+                    <a href="/signup"><span>Create new account</span></a>
+                </div>
+                <div class="step-two">
+                    <p>Step 2: Choose you restaurant you want to dine at</p>
+                    <img src="../static/images/restaurant.png">
+                </div>
+                <div class="step-three">
+                    <p>Step 3: Here are food lists of your chosed restaurant. Click on the food to see more about the food.</p>
+                    <img src="../static/images/food.png">
+                </div>
+                <div class="step-four">
+                    <p>Step 4: <span class="bang">BOOM!</span> Here you can read write review, rate, and see the address of the restaurant. </p>
+                    <img src="../static/images/review.png">
+                </div>
+                <div class="step-five">
+                    <p>Go, create an account and explore it for yourself !! :)</p>
+                    <a href="/signup"><span>Create new account</span></a>
+                </div>
                 
             </section>
 
