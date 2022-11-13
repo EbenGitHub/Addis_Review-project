@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>Foods</title>
+
+        <script src="https://kit.fontawesome.com/7d3bc7f2d4.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+        <link rel="icon" href="../static/images/icon.png">
+        <style>
+
+            body {
+                font-size: large;
+            }
+
+            .logo {
+                background: url(../static/images/icon.png);
+                background-size: 100%;
+                
+                width: 30px;
+                height: 30px;
+            }
+
+            .logo:hover {
+                transform: rotate(360deg);
+                transform: scale(1.1);
+                opacity: 30%;
+                transition-duration: .8s;
+            }
+
+            .hr-line {
+                width: 95%;
+                margin-left: 25px;
+                height: 5px;
+                background-color: #003333;
+                opacity: 50%;
+            }
+
+            .restaurant .hr-line {
+                height: 1px;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                background-color: #003333;
+                align-items: center;
+                position: fixed;
+                width: 100%;
+                z-index: 5;
+            }
+
+            nav ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                padding: 10px;
+            }
+
+            nav ul li, nav ul li a {
+                margin: auto 5px;
+                padding: 5px;
+                color: aliceblue;
+                
+            }
+
+            nav ul li:hover, nav ul li a:hover {
+                transition-duration: .5s;
+                background-color: #669999;
+                cursor: pointer;
+                border-radius: 20px;
+                color: whitesmoke;
+            }
+
+            .ser-nav {
+                padding: 20px auto;
+            }
+
+            .ser-nav input {
+                width: 43px;
+                border-radius: 45%;
+                background-color: #669999;
+                color: white;
+                border: 2px solid #669999;
+            }
+            ::placeholder {
+                color: white;
+                border: 0;
+            }
+
+            .ser-nav button {
+                display: none;
+                border: 0;
+                background-color: transparent;
+                color: aliceblue;
+            }
+
+            .ser-nav input:focus {
+                width: 20em;
+                transition-duration: .5s;
+                background-color: #407F7F;
+                border-radius: 5px;
+            }
+
+            .ser-nav input:focus + button {
+                display: inline;
+            }
+
+            .ser-nav button:hover {
+                color: whitesmoke;
+                transform: scale(1.3);
+                transition-duration: .3s;
+            }
+
+            .ser-nav input:not(:focus) {
+                
+                transition-duration: .5s;
+            }
+
+
+            /*Main element css styles*/
+
+            
+            
+            main .break {
+                background-color: #669999;
+                padding: 1px;
+                height: 60px;
+                padding-top: 95px;
+            }
+
+            main h1 {
+                font-size: larger;
+                font-weight: bolder;
+                padding-left: 10px;
+                position: relative;
+
+                
+            }
+            main .restaurants h2 {
+                font-size: large;
+                padding-left: 30px;
+                font-weight: bold;
+            }
+
+            main .restaurants .restaurant .restr-descr {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            main .restaurant .description {
+                font-size: medium;
+                padding-right: 40px;
+                text-align: justify;
+                width: auto;
+            }
+
+            main .restaurant .img-restr {
+                width: 300px;
+                height: 160px;
+                overflow: hidden;
+                padding-right: 40px;
+                border-radius: 8px;
+                padding-bottom: 20px;
+            }
+
+            main .restaurants .restaurant article p {
+                width: 100%;
+                padding-left: 40px;
+                padding-top: 40px;
+            }
+            
+
+            .restaurant {
+                padding-top: 10px;
+            }
+            .restaurant:hover {
+                background-color: #dff0f0;
+                border-radius: 16px;
+                cursor: pointer;
+                
+            }
+            
+            footer {
+                background-color: #407F7F;
+                height: 40px;
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 30px;
+            }
+
+            footer address {
+                color: whitesmoke;
+                justify-self: end;
+                align-self: center;
+                padding-top: 20px;
+                margin-right: 40px;
+                opacity: 30%;
+            }
+
+            footer address #green {
+                color: rgba(7, 252, 7, 0.958);
+            }
+
+            footer address #yellow {
+                color: rgba(255, 255, 0, 0.967);
+            }
+
+            footer address #red {
+                color: rgba(203, 7, 7, 0.915);
+            }
+
+            footer address:hover {
+                transition-duration: .3s;
+                opacity: 100%;
+                cursor: default;
+            }
+        </style>
+
+    </head>
+
+
+
+<!-- Test for the restaurant html page-->
+
+
+
+
+    <body>
+        
+        <header>
+            <nav>
+                <ul>
+                    <div class="logo"></div>
+                    <li><a href="#">Restaurants</a></li>
+                    <li><a href="#">Foods</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+                    <div class="ser-nav">
+                        <input type="text" placeholder="&nbsp &#xF002; &nbsp Search Restaurants here" style="font-family:Arial, FontAwesome">
+                        <button class="ser-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+
+                    <div class="user-ctl">
+                        <button class="btn btn-outline-danger">Log out <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                    </div>
+                
+            </nav>
+        </header>
+
+        
+
+
+        <!--Main element for the page-->
+        <main>
+            <div class="break head-line">  
+                
+            </div>
+            <h1> <i class="fa-solid fa-bell-concierge"></i> &nbsp [Restaurant] FOODS </h1>
+        <br>
+        <div class="hr-line"></div>
+            <!-- This will later be replaced by AJAX JQuery-->
+            <!-- In case the color complement palette neede, I used #003333 #0D4D4D #407F7F #669999-->
+            
+            <style>
+                .star-rate i {
+                    transition-duration: .3s;
+                }
+
+                .star-rate .fa-star {
+                    color: gray;
+                }
+
+                .food-header {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: -40px;
+                }
+
+                .food-header .price-food {
+                    margin: 10px auto;
+                    margin-right: 85px;
+                    padding: 10px 10px;
+                    font-weight: bolder;
+                    font-size: larger;
+                    border: 3px solid orangered;
+                    border-radius: 50%;
+                    color: orangered;
+                    z-index: 3;
+                    background-color: rgb(219, 194, 146);
+                }
+
+                .food-header .price-food:hover {
+                    background-color: #003333;
+                    color: #dff0f0;
+                    border: 3px solid #669999;
+                    transition-duration: .4s;
+                }
+                
+            </style>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+            <script>
+                $(document).ready(() => {
+                    $(".star-val").each(function(i, obj) {
+                        let starValEach = $(this).text()
+                        console.log(starValEach, i)
+                        //alert(starValEach, i)
+                        for (let i = 1; i < parseInt(starValEach) + 1; i++) {
+                                $(this).siblings(`#${i}`).css("color", "gold")
+                        }
+                        if (parseInt(starValEach) != parseFloat(starValEach)) {
+                            if (parseInt(starValEach) < parseFloat(starValEach)) {
+                                $(this).siblings(`#${parseInt(starValEach) + 1}`).removeClass("fa-star")
+                                $(this).siblings(`#${parseInt(starValEach) + 1}`).addClass("fa-star-half")
+                                $(this).siblings(`#${parseInt(starValEach) + 1}`).css("color", "gold")
+                            } else {
+                                $(this).siblings(`#${parseInt(starValEach) + 2}`).removeClass("fa-star")
+                                $(this).siblings(`#${parseInt(starValEach) + 2}`).addClass("fa-star-half")
+                                $(this).siblings(`#${parseInt(starValEach) + 2}`).css("color", "gold")
+                            }
+                        }
+                    });
+                })
+            </script>
+
+            <!-- Listing restaurants begins from here-->
+            <div class="restaurants">
+                <section class="restaurant">
+                    <div class="food-header">
+                        <h2>Tibs &nbsp &nbsp <i class="fa-solid fa-utensils"></i> &nbsp;  
+                            <div class="star-rate"><i class="fa-solid fa-star" id="1"></i><i class="fa-solid fa-star" id="2">
+                            </i><i class="fa-solid fa-star" id="3"></i><i class="fa-solid fa-star" id="4"></i>
+                            <i class="fa-solid fa-star" id="5"></i> &nbsp;  <span class="star-val">4.6</span></div>  
+                        </h2>
+                        <span class="price-food"><i class="fa-sharp fa-solid fa-dollar-sign"></i> &nbsp; 560</span>
+                    </div>
+                    <div class="restr-descr">
+                    <article>
+                        <p class="description">this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        </p>
+                    </article>
+                    <div>
+                        <img class="img-restr" src="https://i.pinimg.com/originals/23/04/c4/2304c46180dd7647078e2c42f87a8747.jpg" alt="Restaurant Image">
+                    </div>
+                    </div>
+                    <div class="hr-line"></div>
+                </section>
+
+                <section class="restaurant">
+                    <div class="food-header">
+                        <h2>Zilzl &nbsp &nbsp <i class="fa-solid fa-utensils"></i> &nbsp;  
+                            <div class="star-rate"><i class="fa-solid fa-star" id="1"></i><i class="fa-solid fa-star" id="2">
+                            </i><i class="fa-solid fa-star" id="3"></i><i class="fa-solid fa-star" id="4"></i>
+                            <i class="fa-solid fa-star" id="5"></i> &nbsp;  <span class="star-val">0.6</span></div>  
+                        </h2>
+                        <span class="price-food"><i class="fa-sharp fa-solid fa-dollar-sign"></i> &nbsp; 810</span>
+                    </div>
+                    <div class="restr-descr">
+                    <article>
+                        <p class="description">this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        </p>
+                    </article>
+                    <div>
+                        <img class="img-restr" src="https://ethiopianfood.files.wordpress.com/2011/08/raw1.jpg" alt="Restaurant Image">
+                    </div>
+                    </div>
+                    <div class="hr-line"></div>
+                </section>
+
+                <section class="restaurant">
+                    <div class="food-header">
+                        <h2>Leblb &nbsp &nbsp <i class="fa-solid fa-utensils"></i> &nbsp;  
+                            <div class="star-rate"><i class="fa-solid fa-star" id="1"></i><i class="fa-solid fa-star" id="2">
+                            </i><i class="fa-solid fa-star" id="3"></i><i class="fa-solid fa-star" id="4"></i>
+                            <i class="fa-solid fa-star" id="5"></i> &nbsp;  <span class="star-val">3.6</span></div>  
+                        </h2>
+                        <span class="price-food"><i class="fa-sharp fa-solid fa-dollar-sign"></i> &nbsp; 486</span>
+                    </div>
+                    <div class="restr-descr">
+                    <article>
+                        <p class="description">this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
+                        </p>
+                    </article>
+                    <div>
+                        <img class="img-restr" src="https://img.theculturetrip.com/wp-content/uploads/2020/03/gettyimages-1167198929.jpg" alt="Restaurant Image">
+                    </div>
+                    </div>
+                    <div class="hr-line"></div>
+                </section>
+                
+            </div>
+
+        </main>
+
+
+        <footer>
+            <address> <span id="green">A</span>ddis<span id="yellow">R</span>evie<span id="red">W</span></address>
+        </footer>
+
+    </body>
+</html> 

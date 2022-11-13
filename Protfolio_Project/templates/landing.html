@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>welcome</title>
+    </head>
+
+    <body>
+        <style>
+            main #sceine-one {
+                background-color: #003333;
+                height: 100vh;
+                width: 100vw;
+                padding-top: 60px;
+            }
+
+            main #sceine-two {
+                background-color: #ad7805;
+                height: 100vh;
+                width: 100vw;
+            }
+
+            main #sceine-three {
+                background-color: #088619;
+                height: 100vh;
+                width: 100vw;
+            }
+
+            main #sceine-four {
+                background-color: #0c4d74;
+                height: 100vh;
+                width: 100vw;
+            }
+
+            main #sceine-five {
+                background-color: #440ea7;
+                height: 100vh;
+                width: 100vw;
+            }
+
+            nav {
+                text-align: center;
+                font-weight: bolder;
+                font-size: larger;
+                background-color: #258383;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 40px;
+                padding-top: 10px;
+            }
+
+
+            html {
+                    scroll-behavior: smooth;
+                 }
+                 nav {
+                    display: flex;
+                    justify-content: flex-end;
+                    z-index: 3;
+                 }
+
+                 nav ul {
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-around;
+                    margin-right: 50px;
+                    align-items: center;
+                    padding-left: -10px;
+
+                 }
+
+                 nav ul li {
+                    color: white;
+                    margin: auto 5px;
+                    text-decoration: none;
+                    opacity: 0.75;
+                    text-decoration: none;
+                    margin: auto 5px;
+                    border-bottom: 3px solid transparent;
+                 }
+
+                 
+                 nav ul li:hover {
+                    border-bottom: 3px solid white;
+                    transition-duration: .2s;
+                    opacity: 1;
+                    margin-bottom: -3px;
+                 }
+
+                 nav ul a {
+                    text-decoration: none;
+                 }
+
+                 
+        </style>
+
+        <header>
+            <nav>
+                <ul>
+                    <div class="navbar">
+                        <a href="#sceine-two" class="nav-link nav-link-fade-up">
+                            <li>
+                                Info
+                            </li>
+                        </a>
+                    </div>
+                    <div class="navbar">
+                        <a href="#sceine-three" class="nav-link nav-link-fade-up">
+                            <li>
+                                Services
+                            </li>
+                        </a>
+                    </div>
+                    <div class="navbar">
+                        <a href="#sceine-four" class="nav-link nav-link-fade-up">
+                            <li>
+                                Help
+                            </li>
+                        </a>
+                    </div>
+                    <div class="navbar">
+                        <a href="#sceine-five" class="nav-link nav-link-fade-up">
+                            <li>
+                                Contact
+                            </li>
+                        </a>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <style>
+
+                #sceine-one {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                #sceine-one #welcome {
+                    color: wheat;
+                }
+
+                #sceine-one #welcome h1{
+                    font-size: 2.5rem;
+                }
+
+                #sceine-one #welcome h1 span {
+                    color:  #c5914c;
+                    font-weight: bolder;
+                }
+
+                #sceine-one img {
+                    transition-duration: .2s;
+                    border-radius: 70%;
+                    border: 5px solid #258383;
+                }
+
+                #sceine-one img:hover {
+                    transform: scale(1.05);
+                    transition-duration: .3s;
+                    opacity: .75;
+
+                }
+
+                main section {
+                    padding-top: 60px;
+                }
+
+                main section h2 {
+                    display: block;
+                    margin-left: 70px;
+                    font-size: 2.1rem;
+                }
+
+                .container {
+                    display: flex;
+                    padding: 40px;
+                }
+                 .container .cont-img {
+                    width: 60vw;
+                    display: flex;
+                    flex-direction: column;
+                 }
+
+                 .container .cont-img div:first-of-type img {
+                    opacity: .75;
+                    width: 80%;
+                    z-index: 1;
+                    border-radius: 15%;
+                 }
+
+                 .container .cont-img div:last-of-type img {
+                    width: 30%;
+                    position: relative;
+                    top: -60px;
+                    left: -20px;
+                    border-radius: 25%;
+                 }
+
+                 .bar:hover {
+                    fill: brown;
+                 }
+               
+            </style>
+<script src="libs/d3.v3.min.js"></script>
+<script src="libs/d3/d3.min.js" charset="utf-8"></script>
+<script src="libs/d3/topojson.v1.min.js"></script>
+<script src="libs/d3/d3-queue.v2.min.js"></script>
+            <script>
+                const dataset = [10, 26, 45];
+                const nameset = ["user", "restaurants", "foods"];
+                const w = 500;
+                const h = 100;
+
+                const svg = d3.select("#cont-svg")
+                              .append("svg")
+                              .attr("width", w)
+                              .attr("height", h)
+
+                svg.selectAll("rect")
+                   .data(dataset)
+                   .enter()
+                   .append("rect")
+                   .attr("x", (d, i) => i * 30)
+                   .attr("y", (d, i) => h - 3 * d)
+                   .attr("width", 25)
+                   .attr("height", (d, i) => d * 3)
+                   .attr("fill", "navy")
+                   .attr("class", "bar")
+                   .append("title")
+                   .text(d => d)
+
+                svg.selectAll("text")
+                   .data(dataset)
+                   .enter()
+                   .append("text")
+                   .text((d) => d)
+                   .attr("x", (d, i) => i * 30)
+                   .attr("y", (d, i) => h - (d * 3 + 3))
+            </script>
+            
+            <section id="sceine-one">
+                <div>
+                    <img src="../static/images/logo.png">
+                </div>
+                <div id="welcome">
+                    <h1>Welcome To <span>ADDIS-REVIEW</span> ...</h1>
+                    <p>A place where you get to review the foods in addis ababa</p>
+                </div>
+
+            </section>
+
+            <section id="sceine-two">
+                <h2>Where am I? </h2>
+                <div class="container">
+                    <div class="cont-img">
+                        <div><img src="https://chorus.stimg.co/23213872/100ethiopian020622.jpg?fit=crop&crop=faces" alt=""></div>
+                        <div><img src="https://images.deliveryhero.io/image/fd-my/LH/wnjr-hero.jpg"></div>
+                    </div>
+                    <div class="cont-txt">
+                        <p>This is a website for choosing delicious foods. You can review and rate restaurants' foods here</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sceine-three">
+                <h2>Our Customers and Services</h2>
+                <div class="container">
+                    <div id="cont-svg">
+
+                    </div>
+                    <div class="cont-txt">
+
+                    </div>
+                </div>
+                
+            </section>
+
+            <section id="sceine-four">
+                <h2>How to use the website</h2>
+
+                
+            </section>
+
+            <section id="sceine-five">
+                <h2>About us</h2>
+                
+            </section>
+
+        </main>
+        
+    </body>
+</html>

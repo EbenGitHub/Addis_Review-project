@@ -160,12 +160,11 @@
             }
 
             main .restaurant .img-restr {
-                width: 300px;
-                height: 160px;
-                overflow: hidden;
-                padding-right: 40px;
-                border-radius: 8px;
-                padding-bottom: 20px;
+                width: 500px;
+                height: auto;
+                margin-left: 40px;
+                border-radius: 18px;
+                margin-top: 20px;
             }
 
             main .restaurants .restaurant article p {
@@ -246,7 +245,7 @@
                     </div>
 
                     <div class="user-ctl">
-                        <button class="btn btn-outline-danger">Log out <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                        <button class="btn btn-outline-danger">Log out <i class="fa-regular fa-arrow-right-from-bracket"></i></button>
                     </div>
                 
             </nav>
@@ -290,8 +289,12 @@
                     border-radius: 0 15px 15px 15px;
                 }
 
+                .leave-comment input:focus {
+                    border: 5px solid #003333;
+                }
+
                 ::placeholder {
-                    margin-left: 40px;
+                    padding-left: 40px;
                 }
 
                 .btn-outline-primary {
@@ -303,6 +306,73 @@
                     margin-top: 20px;
                 }
 
+                .read-comment {
+                    margin-left: 40px;
+                    background-color: #ddecec;
+                    width: 80%;
+                    border-radius: 4px;
+                    padding: 20px 40px;
+                    margin-top: 40px;
+                }
+
+                .others-comment .comment-writer {
+                    margin-left: 50px;
+                }
+
+                .price-food {
+                    z-index: 2;
+                    margin-left: -60px;
+                    justify-self: flex-start;
+                    font-weight: bolder;
+                    font-size: larger;
+                    border: 3px solid #669999;
+                    border-radius: 50%;
+                    padding: 15px;
+                    background-color: #003333;
+                    color: #ddecec;
+                }
+
+                .price-food:hover {
+                    background-color: rgb(235, 94, 43);
+                    border: 3px dotted orange;
+                }
+
+                #img-prc {
+                    display: flex;
+                    align-items: flex-start;
+                }
+
+                #img-prc:hover {
+                    opacity: 80%;
+                    transition-duration: .5s;
+                }
+
+                .food-spec {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .rest-add {
+                    margin-right: 60px;
+                }
+
+                .rest-add .rest-cont, .rest-add .rest-loca {
+                    margin: 15px 5px;
+                    
+                }
+
+                .rest-add .rest-cont:hover, .rest-add .rest-loca:hover {
+                    color: rgb(235, 94, 43);
+                }
+
+                .star-rate-noedit:hover {
+                     color: rgb(247, 88, 14);   
+                     transform: scale(1.05);
+                     transition-duration: .2s;
+                    }
+
+                
                 @keyframes comment {
                     1% {
                         width: 0%;
@@ -326,7 +396,10 @@
                         margin-left: 80px;
                         background-color: #7aa8a8;
                         color: white;
+                        padding-left: 40px;
                     }
+
+                    
                     
                 }
             </style>
@@ -336,11 +409,11 @@
             <script>
 
                 $(document).ready(() => {
-                    $(".fa-star").hover(function(){
+                    $(".fa-solid").hover(function(){
                         let starVal = $(this).attr("id")
                         let listStar = []
                         $(this).css("color", "gray")
-                        $(this).siblings(".fa-star").css("color", "gray")
+                        $(this).siblings(".fa-solid").css("color", "gray")
                         for (let i = 1; i < parseInt(starVal) + 1; i++) {
                             $(this).css("color", "goldenrod")
                             $(this).siblings(`#${i}`).css("color", "goldenrod")
@@ -349,15 +422,15 @@
                         console.log(listStar)
                     })
 
-                    $(".fa-star").mouseleave(function(){
+                    $(".fa-solid").mouseleave(function(){
                         let starVal =  $(this).siblings(".star-val").text()
                         if ($(this).siblings(".star-val").text() == "") {
                             $(this).css("color", "gray")
-                            $(this).siblings('.fa-star').css("color", "gray")
+                            $(this).siblings('.fa-solid').css("color", "gray")
                         } else {
                             
                             $(this).css("color", "gray")
-                            $(this).siblings(".fa-star").css("color", "gray")
+                            $(this).siblings(".fa-solid").css("color", "gray")
                             for (let i = 1; i < parseInt(starVal) + 1; i++) {
                                 $(this).siblings(`#${i}`).css("color", "gold")
                             }
@@ -367,7 +440,7 @@
                         }
                     })
 
-                    $(".fa-star").click(function(){
+                    $(".fa-solid").click(function(){
                         let starVal = $(this).attr("id")
                         $(this).siblings(".star-val").text(starVal)
                         
@@ -396,6 +469,7 @@
 
                         $("#input").val(textVal)
                         $(".btn-outline-primary").prop("disabled", false)
+                        $('input').focus();
                     })
 
                     $("#delete").click(function(){
@@ -404,6 +478,26 @@
                         $(this).text("")
                         $(".btn-outline-primary").prop("disabled", false)
                     })
+
+                    $(".star-val-noedit").each(function(i, obj) {
+                        let starValEach = $(this).text()
+                        console.log(starValEach, i)
+                        //alert(starValEach, i)
+                        for (let i = 1; i < parseInt(starValEach) + 1; i++) {
+                                $(this).siblings(`#${i}`).css("color", "rgb(247, 184, 14)")
+                        }
+                        if (parseInt(starValEach) != parseFloat(starValEach)) {
+                            if (parseInt(starValEach) < parseFloat(starValEach)) {
+                                $(this).siblings(`#${parseInt(starValEach) + 1}`).removeClass("fa-star")
+                                $(this).siblings(`#${parseInt(starValEach) + 1}`).addClass("fa-star-half")
+                                $(this).siblings(`#${parseInt(starValEach) + 1}`).css("color", "rgb(247, 184, 14)")
+                            } else {
+                                $(this).siblings(`#${parseInt(starValEach) + 2}`).removeClass("fa-star")
+                                $(this).siblings(`#${parseInt(starValEach) + 2}`).addClass("fa-star-half")
+                                $(this).siblings(`#${parseInt(starValEach) + 2}`).css("color", "rgb(247, 184, 14)")
+                            }
+                        }
+                    });
                 })
             </script>
 
@@ -411,6 +505,24 @@
             <div class="restaurants">
                 <section class="restaurant">
                     <h2>Tibs &nbsp &nbsp <i class="fa-solid fa-utensils"></i> &nbsp;    </h2>
+                    <div class="food-spec">
+                        <div id="img-prc">
+                        <img class="img-restr" src="https://i.pinimg.com/originals/23/04/c4/2304c46180dd7647078e2c42f87a8747.jpg" alt="Restaurant Image">
+                        <span class="price-food"><i class="fa-sharp fa-regular fa-dollar-sign"></i> &nbsp; 560</span>
+                        <div class="star-rate-noedit"><i class="fa-regular fa-star" id="1"></i><i class="fa-regular fa-star" id="2">
+                        </i><i class="fa-regular fa-star" id="3"></i><i class="fa-regular fa-star" id="4"></i>
+                        <i class="fa-regular fa-star" id="5"></i> &nbsp;  <span class="star-val-noedit">4.6</span></div>
+                    </div>
+                        <div class="rest-add">
+                            <div class="rest-cont">
+                                <i class="fa-solid fa-phone"></i>&nbsp; + 251 388290 3772 7378
+                            </div>
+                            <div class="rest-loca">
+                                <i class="fa-solid fa-location-dot"></i>&nbsp; Merkato silcha sefer
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
                     <div class="restr-descr">
                     <article>
                         <p class="description">this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
@@ -421,9 +533,7 @@
                         this is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl jthis is di d djflsjdkj jsd jsl jsl j
                         </p>
                     </article>
-                    <div>
-                        <img class="img-restr" src="https://blog.tiketi.com/wp-content/uploads/2020/05/048_Intercontinental_Addis_Hotel_HandZaround-1024x683.jpg" alt="Restaurant Image">
-                    </div>
+                    
                     </div>
                     <div class="hr-line"></div>
                 </section>
@@ -437,11 +547,18 @@
                     <input type="text" placeholder="Write your comment .." id="input" tabindex="0">
                     <button type="submit" class="btn btn-outline-primary">Post</button>
                 </section>
-                <section class="usr-comment">
-                    <hr><div>
+                <section class="read-comment">
+                    <span>Read other user comments</span>
+                    <hr><div class="usr-comment">
                         <span class="this-usr-comment"></span>
                         <button type="button" class="btn btn-outline-success" id="edit"></button>
                         <button type="button" class="btn btn-outline-danger" id="delete"></button>
+                        </div>
+                        <div class="others-comment">
+                            <div><p>dksjdlfjsldjfls<span class="comment-writer">user A</span></p></div>
+                            <div><p>dksjdlfjsldjfls<span class="comment-writer">user A</span></p></div>
+                            <div><p>dksjdlfjsldjfls<span class="comment-writer">user A</span></p></div>
+                            <div><p>dksjdlfjsldjfls<span class="comment-writer">user A</span></p></div>
                         </div>
                     <hr>
                 </section>
