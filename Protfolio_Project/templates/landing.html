@@ -203,6 +203,7 @@
 
                  .bar:hover {
                     fill: brown;
+                    cursor: pointer;
                  }
 
                  main section {
@@ -303,7 +304,7 @@
                    .attr("fill", "navy")
                    .attr("class", "bar")
                    .append("title")
-                   .text(d => d)
+                   .text((d, i) => (`${d} ${nameset[i]}`))
 
                 svg.selectAll("text")
                    .data(dataset)
