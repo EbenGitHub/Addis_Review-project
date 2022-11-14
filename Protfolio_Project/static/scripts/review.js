@@ -51,10 +51,16 @@ $(document).ready(() => {
 
     $(".fa-copy").click(function(){
         var copyText = $(this).siblings("span").text();
+        navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
+            if (result.state == "granted" || result.state == "prompt") {
+              alert("Write access ranted!");
+            }
+          });
         navigator.clipboard.writeText(copyText).then(() => {
             alert(`Copied to clipboard: ${copyText}`);
         });
     });
+
 
     $("#go-back").click(function (){
         window.history.back();
