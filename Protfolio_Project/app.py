@@ -8,7 +8,7 @@ def restaurants():
 
 @app.route('/login')
 def login():
-    return redirect("/signup", code=301)
+    return render_template("login.html")
 
 @app.route('/signup')
 def signup():

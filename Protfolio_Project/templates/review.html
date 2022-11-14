@@ -4,220 +4,22 @@
         
         <title>Review</title>
 
-        <script src="https://kit.fontawesome.com/7d3bc7f2d4.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
         <link rel="icon" href="../static/images/icon.png">
+        <link rel="stylesheet" href="../static/styles/nav.css">
+        <link rel="stylesheet" href="../static/styles/main.css">
+        <link rel="stylesheet" href="../static/styles/footer.css">
+        <link rel="stylesheet" href="../static/styles/review.css">
         <style>
 
-            body {
-                font-size: large;
-            }
-
-            .logo {
-                background: url(../static/images/icon.png);
-                background-size: 100%;
-                
-                width: 30px;
-                height: 30px;
-            }
-
-            .logo:hover {
-                transform: rotate(360deg);
-                transform: scale(1.1);
-                opacity: 30%;
-                transition-duration: .8s;
-            }
-
-            .hr-line {
-                width: 95%;
-                margin-left: 25px;
-                height: 5px;
-                background-color: #003333;
-                opacity: 50%;
-            }
-
-            .restaurant .hr-line {
-                height: 1px;
-            }
-
-            nav {
-                display: flex;
-                justify-content: space-between;
-                background-color: #003333;
-                align-items: center;
-                position: fixed;
-                width: 100%;
-                z-index: 5;
-            }
-
-            nav ul {
-                display: flex;
-                list-style: none;
-                align-items: center;
-                padding: 10px;
-            }
-
-            nav ul li, nav ul li a {
-                margin: auto 5px;
-                padding: 5px;
-                color: aliceblue;
-                
-            }
-
-            nav ul li:hover, nav ul li a:hover {
-                transition-duration: .5s;
-                background-color: #669999;
-                cursor: pointer;
-                border-radius: 20px;
-                color: whitesmoke;
-            }
-
-            .ser-nav {
-                padding: 20px auto;
-            }
-
-            .ser-nav input {
-                width: 43px;
-                border-radius: 45%;
-                background-color: #669999;
-                color: white;
-                border: 2px solid #669999;
-            }
-            ::placeholder {
-                color: white;
-                border: 0;
-            }
-
-            .ser-nav button {
-                display: none;
-                border: 0;
-                background-color: transparent;
-                color: aliceblue;
-            }
-
-            .ser-nav input:focus {
-                width: 20em;
-                transition-duration: .5s;
-                background-color: #407F7F;
-                border-radius: 5px;
-            }
-
-            .ser-nav input:focus + button {
-                display: inline;
-            }
-
-            .ser-nav button:hover {
-                color: whitesmoke;
-                transform: scale(1.3);
-                transition-duration: .3s;
-            }
-
-            .ser-nav input:not(:focus) {
-                
-                transition-duration: .5s;
-            }
+            
 
 
             /*Main element css styles*/
 
             
-            
-            main .break {
-                background-color: #669999;
-                padding: 1px;
-                height: 60px;
-                padding-top: 95px;
-            }
-
-            main h1 {
-                font-size: larger;
-                font-weight: bolder;
-                padding-left: 10px;
-                position: relative;
-
-                
-            }
-            main .restaurants h2 {
-                font-size: large;
-                padding-left: 30px;
-                font-weight: bold;
-            }
-
-            main .restaurants .restaurant .restr-descr {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            main .restaurant .description {
-                font-size: medium;
-                padding-right: 40px;
-                text-align: justify;
-                width: auto;
-            }
-
-            main .restaurant .img-restr {
-                width: 500px;
-                height: auto;
-                margin-left: 40px;
-                border-radius: 18px;
-                margin-top: 20px;
-            }
-
-            main .restaurants .restaurant article p {
-                width: 100%;
-                padding-left: 40px;
-                padding-top: 40px;
-            }
-            
-
-            .restaurant {
-                padding-top: 10px;
-            }
-            .restaurant:hover {
-                background-color: #dff0f0;
-                border-radius: 16px;
-                cursor: pointer;
-                
-            }
-            
-            footer {
-                background-color: #407F7F;
-                height: 40px;
-                display: flex;
-                justify-content: flex-end;
-                margin-top: 30px;
-            }
-
-            footer address {
-                color: whitesmoke;
-                justify-self: end;
-                align-self: center;
-                padding-top: 20px;
-                margin-right: 40px;
-                opacity: 30%;
-            }
-
-            footer address #green {
-                color: rgba(7, 252, 7, 0.958);
-            }
-
-            footer address #yellow {
-                color: rgba(255, 255, 0, 0.967);
-            }
-
-            footer address #red {
-                color: rgba(203, 7, 7, 0.915);
-            }
-
-            footer address:hover {
-                transition-duration: .3s;
-                opacity: 100%;
-                cursor: default;
-            }
         </style>
 
     </head>
@@ -230,24 +32,23 @@
 
 
     <body>
+
+        <!--Import necessary library scripts and files-->
+        <script src="https://kit.fontawesome.com/7d3bc7f2d4.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="../static/scripts/rate.js"></script>
+        <script src="../static/scripts/review.js"></script>
         
+
         <header>
             <nav>
                 <ul>
                     <div class="logo"></div>
+                    <li><a href="#">Go back</a></li>
                     <li><a href="#">Restaurants</a></li>
-                    <li><a href="#">Foods</a></li>
                     <li><a href="#">Help</a></li>
                 </ul>
-                    <div class="ser-nav">
-                        <input type="text" placeholder="&nbsp &#xF002; &nbsp Search Restaurants here" style="font-family:Arial, FontAwesome">
-                        <button class="ser-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-
-                    <div class="user-ctl">
-                        <button class="btn btn-outline-danger">Log out <i class="fa-regular fa-arrow-right-from-bracket"></i></button>
-                    </div>
-                
             </nav>
         </header>
 
@@ -257,251 +58,15 @@
         <!--Main element for the page-->
         <main>
             <div class="break head-line">  
-                
             </div>
             <h1> <i class="fa-solid fa-bell-concierge"></i> &nbsp [Restaurant] FOODS </h1>
         <br>
         <div class="hr-line"></div>
-            <!-- This will later be replaced by AJAX JQuery-->
-            <!-- In case the color complement palette neede, I used #003333 #0D4D4D #407F7F #669999-->
             
-            <style>
-                .star-rate i {
-                    transition-duration: .3s;
-                }
 
-                .star-rate .fa-star {
-                    color: gray;
-                }
+            
 
-                .star-rate .fa-star:hover {
-                    transition: .3s;
-                }
-
-                .leave-comment input {
-                    animation-name: comment;
-                    animation-duration: .4s;
-                    animation-fill-mode: forwards;
-                    animation-play-state: paused;
-                    padding: 0;
-                    margin: 0;
-                    border: 0;
-                    border-radius: 0 15px 15px 15px;
-                }
-
-                .leave-comment input:focus {
-                    border: 5px solid #003333;
-                }
-
-                ::placeholder {
-                    padding-left: 40px;
-                }
-
-                .btn-outline-primary {
-                    visibility: hidden;
-                }
-
-                .star-rate {
-                    margin-left: 60px;
-                    margin-top: 20px;
-                }
-
-                .read-comment {
-                    margin-left: 40px;
-                    background-color: #ddecec;
-                    width: 80%;
-                    border-radius: 4px;
-                    padding: 20px 40px;
-                    margin-top: 40px;
-                }
-
-                .others-comment .comment-writer {
-                    margin-left: 50px;
-                }
-
-                .price-food {
-                    z-index: 2;
-                    margin-left: -60px;
-                    justify-self: flex-start;
-                    font-weight: bolder;
-                    font-size: larger;
-                    border: 3px solid #669999;
-                    border-radius: 50%;
-                    padding: 15px;
-                    background-color: #003333;
-                    color: #ddecec;
-                }
-
-                .price-food:hover {
-                    background-color: rgb(235, 94, 43);
-                    border: 3px dotted orange;
-                }
-
-                #img-prc {
-                    display: flex;
-                    align-items: flex-start;
-                }
-
-                #img-prc:hover {
-                    opacity: 80%;
-                    transition-duration: .5s;
-                }
-
-                .food-spec {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                }
-
-                .rest-add {
-                    margin-right: 60px;
-                }
-
-                .rest-add .rest-cont, .rest-add .rest-loca {
-                    margin: 15px 5px;
-                    
-                }
-
-                .rest-add .rest-cont:hover, .rest-add .rest-loca:hover {
-                    color: rgb(235, 94, 43);
-                }
-
-                .star-rate-noedit:hover {
-                     color: rgb(247, 88, 14);   
-                     transform: scale(1.05);
-                     transition-duration: .2s;
-                    }
-
-                
-                @keyframes comment {
-                    1% {
-                        width: 0%;
-                        height: 0px;
-                        background-color: white;
-                        margin-left: 0px;
-                        border: 3px solid black;
-                        display: block;
-                    }
-
-                    50% {
-                        width: 60%;
-                        height: 70px;
-                        background-color: #669999;
-                        margin-left: 60px;
-                    }
-
-                    100% {
-                        width: 80%;
-                        height: 100px;
-                        margin-left: 80px;
-                        background-color: #7aa8a8;
-                        color: white;
-                        padding-left: 40px;
-                    }
-
-                    
-                    
-                }
-            </style>
-
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        
-            <script>
-
-                $(document).ready(() => {
-                    $(".fa-solid").hover(function(){
-                        let starVal = $(this).attr("id")
-                        let listStar = []
-                        $(this).css("color", "gray")
-                        $(this).siblings(".fa-solid").css("color", "gray")
-                        for (let i = 1; i < parseInt(starVal) + 1; i++) {
-                            $(this).css("color", "goldenrod")
-                            $(this).siblings(`#${i}`).css("color", "goldenrod")
-                            listStar.push(i)
-                        }
-                        console.log(listStar)
-                    })
-
-                    $(".fa-solid").mouseleave(function(){
-                        let starVal =  $(this).siblings(".star-val").text()
-                        if ($(this).siblings(".star-val").text() == "") {
-                            $(this).css("color", "gray")
-                            $(this).siblings('.fa-solid').css("color", "gray")
-                        } else {
-                            
-                            $(this).css("color", "gray")
-                            $(this).siblings(".fa-solid").css("color", "gray")
-                            for (let i = 1; i < parseInt(starVal) + 1; i++) {
-                                $(this).siblings(`#${i}`).css("color", "gold")
-                            }
-                        }
-                        if (parseInt($(this).attr("id")) < parseInt(starVal) + 1){
-                            $(this).css("color", "gold")
-                        }
-                    })
-
-                    $(".fa-solid").click(function(){
-                        let starVal = $(this).attr("id")
-                        $(this).siblings(".star-val").text(starVal)
-                        
-                    })
-
-                    $('.btn-link').click(function(){
-                        $(this).siblings("input").css("animation-play-state", "running")    
-                    })
-
-                    $("#input").keypress(function(){
-                        $(this).siblings(".btn-outline-primary").css("visibility", "visible")
-                    })
-
-                    $(".btn-outline-primary").click(function(){
-                        let textVal = $(this).siblings("#input").val()
-                        console.log(textVal)
-                        $(this).siblings("#input").val("")
-                        $(".this-usr-comment").text(textVal);
-                        $(".btn-outline-success").text("Edit");
-                        $(".btn-outline-danger").text("Delete");
-                        $(this).prop("disabled", true)
-                    })
-
-                    $("#edit").click(function(){
-                        let textVal = $(".this-usr-comment").text()
-
-                        $("#input").val(textVal)
-                        $(".btn-outline-primary").prop("disabled", false)
-                        $('input').focus();
-                    })
-
-                    $("#delete").click(function(){
-                        $(".this-usr-comment").text("")
-                        $("#edit").text("")
-                        $(this).text("")
-                        $(".btn-outline-primary").prop("disabled", false)
-                    })
-
-                    $(".star-val-noedit").each(function(i, obj) {
-                        let starValEach = $(this).text()
-                        console.log(starValEach, i)
-                        //alert(starValEach, i)
-                        for (let i = 1; i < parseInt(starValEach) + 1; i++) {
-                                $(this).siblings(`#${i}`).css("color", "rgb(247, 184, 14)")
-                        }
-                        if (parseInt(starValEach) != parseFloat(starValEach)) {
-                            if (parseInt(starValEach) < parseFloat(starValEach)) {
-                                $(this).siblings(`#${parseInt(starValEach) + 1}`).removeClass("fa-star")
-                                $(this).siblings(`#${parseInt(starValEach) + 1}`).addClass("fa-star-half")
-                                $(this).siblings(`#${parseInt(starValEach) + 1}`).css("color", "rgb(247, 184, 14)")
-                            } else {
-                                $(this).siblings(`#${parseInt(starValEach) + 2}`).removeClass("fa-star")
-                                $(this).siblings(`#${parseInt(starValEach) + 2}`).addClass("fa-star-half")
-                                $(this).siblings(`#${parseInt(starValEach) + 2}`).css("color", "rgb(247, 184, 14)")
-                            }
-                        }
-                    });
-                })
-            </script>
-
-            <!-- Listing restaurants begins from here-->
+            <!-- Selected food goues here-->
             <div class="restaurants">
                 <section class="restaurant">
                     <h2>Tibs &nbsp &nbsp <i class="fa-solid fa-utensils"></i> &nbsp;    </h2>
@@ -539,7 +104,7 @@
                 </section>
 
                 
-
+                <!--User commenting and rating section-->
                 <section class="leave-comment">
                     <div class="star-rate">Rate &nbsp; <i class="fa-solid fa-star" id="1"></i><i class="fa-solid fa-star" id="2"></i><i class="fa-solid fa-star" id="3"></i><i class="fa-solid fa-star" id="4"></i><i class="fa-solid fa-star" id="5"></i> &nbsp;  <span class="star-val"></span></div>
                     <button type="button" class="btn btn-link">Click here to leave a comment ...</button>

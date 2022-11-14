@@ -1,103 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
     <head>
         <title>welcome</title>
+        <!--Import necessary css and scss files-->
+        <link rel="stylesheet" href="../static/styles/landing.css">
     </head>
-    <script src="https://kit.fontawesome.com/7d3bc7f2d4.js" crossorigin="anonymous"></script>
+    
 
     <body>
-        <style>
-            main #sceine-one {
-                background-color: #003333;
-                height: 100vh;
-                width: 100vw;
-                padding-top: 60px;
-            }
-
-            main #sceine-two {
-                background-color: #ad7805;
-                height: 100vh;
-                width: 100vw;
-            }
-
-            main #sceine-three {
-                background-color: #088619;
-                height: 100vh;
-                width: 100vw;
-            }
-
-            main #sceine-four {
-                background-color: #0c4d74;
-                height: 100vh;
-                width: 100vw;
-            }
-
-            main #sceine-five {
-                background-color: #440ea7;
-                height: 100vh;
-                width: 100vw;
-            }
-
-            nav {
-                text-align: center;
-                font-weight: bolder;
-                font-size: larger;
-                background-color: #258383;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 40px;
-                padding-top: 10px;
-            }
 
 
-            html {
-                    scroll-behavior: smooth;
-                 }
-                 nav {
-                    display: flex;
-                    justify-content: flex-end;
-                    z-index: 3;
-                 }
+            <!-- JAVASCRIPT SECTION -->
 
-                 nav ul {
-                    list-style: none;
-                    display: flex;
-                    justify-content: space-around;
-                    margin-right: 50px;
-                    align-items: center;
-                    padding-left: -10px;
 
-                 }
+        <!--Import necessary library and files-->
+        <script src="https://kit.fontawesome.com/7d3bc7f2d4.js" crossorigin="anonymous"></script>
+        <script src="../static/scripts/external_libraries.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        
 
-                 nav ul li {
-                    color: white;
-                    margin: auto 5px;
-                    text-decoration: none;
-                    opacity: 0.75;
-                    text-decoration: none;
-                    margin: auto 5px;
-                    border-bottom: 3px solid transparent;
-                 }
 
-                 
-                 nav ul li:hover {
-                    border-bottom: 3px solid white;
-                    transition-duration: .2s;
-                    opacity: 1;
-                    margin-bottom: -3px;
-                 }
 
-                 nav ul a {
-                    text-decoration: none;
-                 }
 
-                 
-        </style>
+        <!--HTML ELEMENT SECTION-->
 
+
+        
         <header>
+
+            <!--Navigation bar-->
             <nav>
+                <i class="fa-solid fa-bars"></i>
                 <ul>
                     <div class="navbar">
                         <a href="#sceine-two" class="nav-link nav-link-fade-up">
@@ -130,94 +66,12 @@
                 </ul>
             </nav>
         </header>
+        
+        
         <main>
-            <style>
 
-                #sceine-one {
-                    display: flex;
-                    justify-content: space-around;
-                    flex-direction: row;
-                    align-items: center;
-                }
-
-                #sceine-one #welcome {
-                    color: wheat;
-                }
-
-                #sceine-one #welcome h1{
-                    font-size: 2.5rem;
-                }
-
-                #sceine-one #welcome h1 span {
-                    color:  #c5914c;
-                    font-weight: bolder;
-                }
-
-                #sceine-one img {
-                    transition-duration: .2s;
-                    border-radius: 70%;
-                    border: 5px solid #258383;
-                }
-
-                #sceine-one img:hover {
-                    transform: scale(1.05);
-                    transition-duration: .3s;
-                    opacity: .75;
-
-                }
-
-                main section {
-                    padding-top: 60px;
-                }
-
-                main section h2 {
-                    display: block;
-                    margin-left: 70px;
-                    font-size: 2.1rem;
-                }
-
-                .container {
-                    display: flex;
-                    padding: 40px;
-                }
-                 .container .cont-img {
-                    width: 60vw;
-                    display: flex;
-                    flex-direction: column;
-                 }
-
-                 .container .cont-img div:first-of-type img {
-                    opacity: .75;
-                    width: 80%;
-                    z-index: 1;
-                    border-radius: 15%;
-                 }
-
-                 .container .cont-img div:last-of-type img {
-                    width: 30%;
-                    position: relative;
-                    top: -60px;
-                    left: -20px;
-                    border-radius: 25%;
-                 }
-
-                 .bar:hover {
-                    fill: brown;
-                    cursor: pointer;
-                 }
-
-                 main section {
-                    position: relative;
-                    left: 0;
-                    right: 0;
-                 }
-
-                 nav {
-                    right: 0;
-                 }
-               
-            </style>
             
+            <!--Welcoming page -->
             <section id="sceine-one">
                 <div>
                     <img src="../static/images/logo.png">
@@ -229,6 +83,8 @@
 
             </section>
 
+
+            <!--Info page-->
             <section id="sceine-two">
                 <h2>Where am I? </h2>
                 <div class="container">
@@ -242,97 +98,55 @@
                 </div>
             </section>
 
+
+            <!--Services page-->
             <section id="sceine-three">
                 <h2>Our Customers and Services</h2>
                 <div class="container">
                     <div id="cont-svg">
-
-<style>
-
-    section h2 {
-        color: white;
-    }
-
-    .cont-txt {
-        font-size: 2.2rem;
-        width: 50%;
-        line-height: 5.3rem;
-        color: rgb(20, 20, 57);
-    }
-
-    #cont-svg {
-        padding-left: 90px;
-    }
-
-    text {
-        font-weight: bolder;
-        fill: navy;
-    }
-</style>
                         
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d3js.org/d3.v6.min.js"></script>
-
-            <script>
-                const dataset = [10, 45, 26, 29];
-                const nameset = ["Users", "Foods", "Restaurants", "Reviews"];
-                const w = 500;
-                const h = 200;
-
-
-                $(document).ready(function(){
-                    $("#user-number").text(dataset[0]);
-                    $("#food-number").text(dataset[1]);
-                    $("#restaurant-number").text(dataset[2]);
-                    $("#review-number").text(dataset[3]);
-                });
-
-
-                const svg = d3.select("#cont-svg")
-                              .append("svg")
-                              .attr("width", w)
-                              .attr("height", h)
-
-                svg.selectAll("rect")
-                   .data(dataset)
-                   .enter()
-                   .append("rect")
-                   .attr("x", (d, i) => i * 90)
-                   .attr("y", (d, i) => h - 3 * d)
-                   .attr("width", 75)
-                   .attr("height", (d, i) => d * 3)
-                   .attr("fill", "navy")
-                   .attr("class", "bar")
-                   .append("title")
-                   .text((d, i) => (`${d} ${nameset[i]}`))
-
-                svg.selectAll("text")
-                   .data(dataset)
-                   .enter()
-                   .append("text")
-                   .text((d, i) => nameset[i])
-                   .attr("x", (d, i) => i * 90)
-                   .attr("y", (d, i) => h - (d * 3 + 9))
-            </script>
-
-            <style> 
-                .sceine-four div img {
-                    width: 100px !important;
-                    height: 50px;
-                }
-
+                        <!--SVG D3 Graph for this page-->
+                        <script>
+                            const dataset = [10, 45, 26, 29];
+                            const nameset = ["Users", "Foods", "Restaurants", "Reviews"];
+                            const w = 500;
+                            const h = 200;
                 
-
-                .sceine-four {
-                    display: flex;
-                }
-
-                .sceine-three .cont-txt span {
-                    font-weight: bolder;
-                }
-            </style>
-
-
+                
+                            $(document).ready(function(){
+                                $("#user-number").text(dataset[0]);
+                                $("#food-number").text(dataset[1]);
+                                $("#restaurant-number").text(dataset[2]);
+                                $("#review-number").text(dataset[3]);
+                            });
+                
+                
+                            const svg = d3.select("#cont-svg")
+                                          .append("svg")
+                                          .attr("width", w)
+                                          .attr("height", h)
+                
+                            svg.selectAll("rect")
+                               .data(dataset)
+                               .enter()
+                               .append("rect")
+                               .attr("x", (d, i) => i * 90)
+                               .attr("y", (d, i) => h - 3 * d)
+                               .attr("width", 75)
+                               .attr("height", (d, i) => d * 3)
+                               .attr("fill", "navy")
+                               .attr("class", "bar")
+                               .append("title")
+                               .text((d, i) => (`${d} ${nameset[i]}`))
+                
+                            svg.selectAll("text")
+                               .data(dataset)
+                               .enter()
+                               .append("text")
+                               .text((d, i) => nameset[i])
+                               .attr("x", (d, i) => i * 90)
+                               .attr("y", (d, i) => h - (d * 3 + 9))
+                        </script>
                     </div>
                     <div class="cont-txt">
                         <p>We have over <span id="user-number"></span> users with more than <span id="food-number"></span> foods and 
@@ -340,15 +154,15 @@
                             <br><span class="triger"><i class="fa-solid fa-hand-point-up"></i> &nbsp; Hover on the SVG graph for more detail</span></p>
                     </div>
                 </div>
-                
             </section>
 
+
+            <!--Help page-->
             <section id="sceine-four">
                 <h2>How to use the website</h2>
                 <div class="how-to">
                     <div id="step-one">
                         <p>Step 1: first of all you need to create a new account</p>
-                        
                         <a href="/signup"><span class="triger">Create new account &nbsp; <i class="fa-solid fa-plus"></i></span></a>
                     </div>
                     <div class="step-two">
@@ -368,108 +182,10 @@
                         <a href="/signup"><span>Create new account</span></a>
                     </div>
                 </div>
-                <style>
-                    .how-to {
-                        display: grid;
-                        column-gap: 50px;
-                        row-gap: 5px;
-                        grid-template-columns: 20% .5fr .5fr;
-                        margin-top: -70px;
-                        padding: 10px;
-                    }
-
-                    #sceine-four h2 {
-                        position: relative;
-                        top: -30px;
-                    }
-
-                    .how-to .step-one {
-                        grid-row-start: 1;
-                        grid-row-end: 3;
-                        grid-column-start: 1;
-                        grid-column-end: 2;
-                        text-align: center;
-                    }
-
-                    .how-to .step-four {
-                        grid-row-start: 2;
-                        grid-row-end: 3;
-                        grid-column-start: 2;
-                        grid-column-end: 3;
-                    }
-
-                    .how-to .step-five {
-                        grid-row-start: 2;
-                        grid-row-end: 3;
-                        grid-column-start: 3;
-                        grid-column-end: 4;
-                    }
-
-                    .how-to .step-one, .how-to .step-five {
-                        padding: 40px;
-                    }
-
-                    #sceine-four div p {
-                        color: #ccc88f;
-                        font-size: 1.5rem;
-                    }
-
-                    #sceine-four div a {
-                        color: greenyellow;
-                        text-decoration: none;
-                        margin-left: 50px;
-                        font-size: 1.2rem;
-                    }
-
-                    #sceine-four div a:hover {
-                        color: yellow;
-                        font-size: 1.25rem;
-                        transition-duration: .3s;
-                    }
-
-                    .bang {
-                        font-size: 2rem;
-                        font-weight: bolder;
-                        color: red;
-                    }
-
-                    #sceine-five div p span{
-                        font-size: 1.6rem;
-                        font-weight: bolder;
-                    }
-
-                    #sceine-five div ul li {
-                        font-size: 1.2rem;
-                        
-                    }
-
-                    #sceine-five .org {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: flex-start;
-                        padding-left: 120px;
-                        color: rgb(178, 227, 214);
-                        
-                    }
-
-                    #sceine-five .org ul {
-                        color: #e1d2bf;
-                    }
-
-                    .org #slogan, .org #school {
-                        align-self: flex-end;
-                        margin-right: 60px;
-                    }
-
-                    .fa-heart {
-                        color: red;
-                    }
-
-
-                </style>
             </section>
+            
 
+            <!--Contact page-->
             <section id="sceine-five">
                 <h2>About us</h2>
                 <div class="org">
@@ -493,14 +209,14 @@
                             <li><i class="fa-solid fa-database"></i> &nbsp; MySQL</li>
                         </ul>
                     </div>
-                
                     <p id="slogan">Made with <i class="fa-solid fa-heart"></i> by ALX-SE Students</p>
                     <div id="school">
                         <p>ALX - Software Engineering School</p>
                     </div> 
                 </div>
-                               
             </section>
+
+
 
         </main>
         
