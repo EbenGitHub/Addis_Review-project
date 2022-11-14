@@ -131,7 +131,7 @@ main .restaurant .img-restr {
     
 }
 
-.rest-add .rest-cont:hover, .rest-add .rest-loca:hover {
+.rest-add .rest-cont .fa-copy:hover, .rest-add .rest-loca .fa-copy:hover {
     color: rgb(235, 94, 43);
 }
 
