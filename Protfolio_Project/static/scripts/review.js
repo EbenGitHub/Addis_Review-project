@@ -52,9 +52,11 @@ $(document).ready(() => {
     $(".fa-copy").click(function(){
         var copyText = $(this).siblings("span").text();
         navigator.clipboard.writeText(copyText).then(() => {
-        // Alert the user that the action took place.
-        // Nobody likes hidden stuff being done under the hood!
-        alert(`Copied to clipboard: ${copyText}`);
+            alert(`Copied to clipboard: ${copyText}`);
         });
+    });
+
+    $("#go-back").click(function (){
+        window.history.back();
     });
 })
