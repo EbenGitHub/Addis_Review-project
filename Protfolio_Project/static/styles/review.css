@@ -90,14 +90,14 @@ main .restaurant .img-restr {
 
 .price-food {
     z-index: 2;
-    margin-left: -60px;
+    margin-left: -100px;
     justify-self: flex-start;
     font-weight: bolder;
     font-size: larger;
-    border: 3px solid #777819;
+    border: 3px solid #f8d796;
     border-radius: 50%;
     padding: 15px;
-    background-color: #b8bb1e;
+    background-color: #e98e1f;
     color: #ddecec;
 }
 
