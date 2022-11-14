@@ -9,9 +9,6 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-# Define user data
-user = {}
-
 
 
 @app.route('/')
@@ -23,15 +20,13 @@ def index():
 def restaurants():
     if not session.get("auth"):
         return redirect("/login")
+        
     return render_template("restaurant.html")
 
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "GET":
-        if (session["auth"]):
-            loggedin = "You are already logged in"
-            return render_template("restaurant.html", loggedin=loggedin)
         return render_template("login.html")
     elif request.method == "POST":
         session["auth"] = "True"
@@ -41,9 +36,6 @@ def login():
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
     if request.method == "GET":
-        if (session["auth"]):
-            loggedin = "You are already logged in"
-            return render_template("restaurant.html", loggedin=loggedin)
         return render_template("signup.html")
     elif request.method == "POST":
         session["auth"] = "True"

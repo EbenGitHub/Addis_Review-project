@@ -158,7 +158,7 @@ html {
          }
 
          .container .cont-img div:first-of-type img {
-            opacity: .75;
+            opacity: 1;
             width: 80%;
             z-index: 1;
             border-radius: 15%;

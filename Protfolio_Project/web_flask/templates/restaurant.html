@@ -51,7 +51,6 @@
         <!--Main element for the page-->
         <main>
             <div class="break head-line">  
-                {{ loggedin }}
             </div>
             <h1> <i class="fa-solid fa-bell-concierge"></i> &nbsp RESTAURANTS </h1>
         <br>
@@ -62,13 +61,13 @@
 
                 {% for restaurant in restaurants %}
                     <section class="restaurant">
-                        <h2>{{ restaurant.name }} &nbsp &nbsp <i class="fa-solid fa-utensils"></i></h2>
+                        <h2>{{ restaurant['name'] }} &nbsp &nbsp <i class="fa-solid fa-utensils"></i></h2>
                         <div class="restr-descr">
                         <article>
-                            <p class="description">{{ restaurant.description }}</p>
+                            <p class="description">{{ restaurant['description'] }}</p>
                         </article>
                         <div>
-                            <img class="img-restr" src="{{ restaurant.image }}" alt="Restaurant Image">
+                            <img class="img-restr" src="{{ restaurant['image'] }}" alt="Restaurant Image">
                         </div>
                         </div>
                         <div class="hr-line"></div>
