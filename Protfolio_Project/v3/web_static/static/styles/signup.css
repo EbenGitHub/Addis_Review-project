@@ -1,5 +1,5 @@
 body{
-    font-family: sans-serif;
+    font-family: 'Kanit', sans-serif;
     align-items: center;
     height:100vh;
     padding: 0;
@@ -49,7 +49,6 @@ form .txt_field{
     font-size: 17px;
     background: none;
     outline: none;
-    font-family:
 }
 .login{
     font-weight: 300;

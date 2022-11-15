@@ -51,6 +51,8 @@ $(document).ready(() => {
             success: function(response){
                 console.log(response)
                 $(".star-val").text(starVal)
+                $("#alert-user").empty().html('<div class="alert alert-success" \
+                role="alert">You rated this food successfully!</div>')
             },
             error: function(error){
                 console.log(error);

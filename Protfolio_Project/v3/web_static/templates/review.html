@@ -12,16 +12,11 @@
         <link rel="stylesheet" href="../static/styles/main.css">
         <link rel="stylesheet" href="../static/styles/footer.css">
         <link rel="stylesheet" href="../static/styles/review.css">
-        <style>
-
-            
-
-
-            /*Main element css styles*/
-
-            
-        </style>
-
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;800&display=swap" rel="stylesheet">
+    
     </head>
 
 
@@ -59,6 +54,13 @@
         <main>
             <div class="break head-line">  
             </div>
+
+
+            <div id="alert-user">
+                
+            </div>
+
+
             <h1> <i class="fa-solid fa-bell-concierge"></i> &nbsp [Restaurant] FOODS </h1>
         <br>
         <div class="hr-line"></div>
@@ -80,10 +82,10 @@
                     </div>
                         <div class="rest-add">
                             <div class="rest-cont">
-                                <i class="fa-solid fa-phone"></i>&nbsp; <span>+ 251 388290 3772 7378</span> &nbsp; <i class="fa-regular fa-copy"></i>
+                                <i class="fa-solid fa-phone"></i>&nbsp; <span>+ 251 388290 3772 7378</span> &nbsp; <i class="fa-regular fa-copy" data-toggle="tooltip" title="click here to copy to the clipboard"></i>
                             </div>
                             <div class="rest-loca">
-                                <i class="fa-solid fa-location-dot"></i>&nbsp; <span>Merkato silcha sefer</span> &nbsp; <i class="fa-regular fa-copy"></i>
+                                <i class="fa-solid fa-location-dot"></i>&nbsp; <span>Merkato silcha sefer</span> &nbsp; <i class="fa-regular fa-copy" data-toggle="tooltip" title="click here to copy to the clipboard"></i>
                             </div>
                         </div>
                         <div></div>
@@ -110,7 +112,9 @@
                     <button type="button" class="btn btn-link">Click here to leave a comment ...</button>
                     
                     <input type="text" placeholder="Write your comment .." id="input" tabindex="0">
-                    <button type="submit" class="btn btn-outline-primary">Post</button>
+                    <button type="submit" id="post-cmt" class="btn btn-outline-primary">Post</button>
+                    <!-- Hover effect data-toggle="tooltip" title="Hooray!"-->
+
                 </section>
                 <section class="read-comment">
                     <span>Read other user comments</span>

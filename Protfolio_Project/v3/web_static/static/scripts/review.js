@@ -54,6 +54,8 @@ $(document).ready(() => {
                 $(".btn-outline-success").text("Edit");
                 $(".btn-outline-danger").text("Delete");
                 $(".btn-outline-primary").prop("disabled", true)
+                $("#alert-user").empty().html('<div class="alert alert-success" \
+                role="alert">You reviewed this food successfully!</div>')
             },
             error: function(error){
                 console.log(error);
@@ -94,6 +96,8 @@ $(document).ready(() => {
                 $("#edit").text("")
                 $("#delete").text("")
                 $(".btn-outline-primary").prop("disabled", false)
+                $("#alert-user").empty().html('<div class="alert alert-danger"\
+                 role="alert">You review is deleted !</div>')
             },
             error: function(error){
                 console.log(error);
