@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+// Fetch the data for the landing page statistics
    fetch('/api/stats')
    .then(response => response.json())
    .then(data => {

@@ -1,4 +1,7 @@
 $(document).ready(() => {
+
+
+// This is the function for the hover and click effect of the stars
     $(".fa-solid").hover(function(){
         let starVal = $(this).attr("id")
         let listStar = []
@@ -58,6 +61,8 @@ $(document).ready(() => {
         
     })
 
+
+// This is for the review input pop up function
     $('.btn-link').click(function(){
         $(this).siblings("input").css("animation-play-state", "running")    
     })
